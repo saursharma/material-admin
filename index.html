@@ -1,0 +1,81 @@
+<!doctype html>
+<html ng-app='adminPanel'>
+  <head>
+  <script src="bower_components/angular/angular.min.js"></script>
+  <script src="bower_components/angular-material/angular-material.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="bower_components/angular-material/angular-material.min.css">
+  <script src="bower_components/hammerjs/hammer.min.js"></script>
+  <script src="bower_components/angular-aria/angular-aria.min.js"></script>
+  <script src="bower_components/angular-animate/angular-animate.min.js"></script>
+  <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <script src="js/appController.js"></script>
+  <link rel="stylesheet" type="text/css" href="css/app.css">
+</head>
+<body ng-controller="adminCtrl">
+  <md-toolbar md-scroll-shrink>
+    <div class="md-toolbar-tools">
+      <md-button ng-click="toggleLeft()">
+      <span class="glyphicon glyphicon-list" aria-hidden="true"></span>
+      </md-button>
+      <h2> {{title}} </h2>
+    </div>
+  </md-toolbar>
+  <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left">
+    <md-toolbar class="md-theme-indigo" ng-controller="LeftCtrl">
+    <div layout="row">
+      <div flex>
+      <span style="padding: 12%;" class="glyphicon glyphicon-arrow-left" aria-hidden="true" ng-click="close()"></span> 
+      </div><div flex>
+      <h1 class="md-toolbar-tools">Menu</h1>
+      </div></div>
+    </md-toolbar>
+    <md-content class="md-padding" ng-controller="LeftCtrl">
+       <md-list>
+         <md-item ng-repeat="item in menuItems"> 
+           <md-item-content> 
+           <div layout="row">
+             <div flex>
+               <span class="glyphicon {{item.icon}}" aria-hidden="true"></span> 
+             </div>
+             <div flex>
+               <span> {{item.name}} </span>
+             </div>
+           </div>
+           <hr/>
+           </md-item-content>
+          </md-item>
+       </md-list>
+    </md-content>
+  </md-sidenav>
+
+  <md-content>
+    <md-card>Welcome to {{title}}</md-card>
+    <br/>
+   <md-card>
+   <table class="table table-hover">
+      <thead>
+        <tr>
+           <th> <md-checkbox> </md-checkbox></th> 
+           <th>Origin</th>
+          <th>Destination</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td> <md-checkbox> </md-checkbox></td>
+          <td> asdad </td>
+          <td>asd</td>
+        </tr>
+        <tr>
+          <td> <md-checkbox> </md-checkbox></td>
+          <td>sdaf</td>
+          <td>ads</td>
+        </tr>
+      </tbody>
+   </table>
+   </md-card>
+  </md-content>
+</body>
+</html>
+  
