@@ -1,0 +1,19 @@
+
+    .login-body {
+      background: whitesmoke;
+    }  
+    .login-window {
+      width: 30%;
+      background: white;
+      margin-left: 35%;
+      margin-top: 10%;
+    }
+    .login-toolbar {
+      background: #E76D07 !important;
+    }
+    .logo {
+      border-radius: 50%;
+      width: 30%;
+      margin-top: 2%;
+      border: 3px solid rgb(33, 165, 115);
+    }
