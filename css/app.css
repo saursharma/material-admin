@@ -1,0 +1,36 @@
+.dashboard-grid {
+  width: 80%;
+  margin-left: 10%;
+}
+
+.grid-text {
+  margin-top: 5%;
+  font-size: 36px;
+}
+
+.grid-child {
+  height: 300px;
+  text-align: center;
+}
+
+.grid-child-1 {
+  font-size: 125px;
+  color: turquoise;
+}
+
+.grid-child-2 {
+  color: slategrey;
+  font-size: 125px;
+}
+
+.grid-child-3 {
+  font-size: 125px;
+  color: brown;
+}
+
+#addPopUp {
+  position: fixed;
+  right: 2%;
+  bottom: 24px;
+  background-color: #db4437;
+}

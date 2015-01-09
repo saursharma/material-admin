@@ -1,0 +1,27 @@
+<md-dialog aria-label="Dialog Header" style="width: 60%">
+ <md-content>
+    <md-subheader class="md-sticky-no-effect"> Dialog Header</md-subheader>
+    <p> Dialog text content </p>
+
+    <md-text-float label="Input label" ng-model="value" class="long"> </md-text-float>
+
+    <md-checkbox ng-model="checkboxValue" aria-label="Checkbox">
+      Checkbox Label
+    </md-checkbox>
+
+    <md-radio-group ng-model="radio">
+      <md-radio-button value="Value1" aria-label="Label 1">Yo !!!</md-radio-button>
+      <md-radio-button value="Value2"> No </md-radio-button>
+    </md-radio-group>
+
+  </md-content>
+  <div class="md-actions" layout="row">
+    <span flex></span>
+    <md-button ng-click="#" class="md-raised md-primary">
+      Confirm
+    </md-button>
+    <md-button ng-click="#" class="md-raised md-warn">
+      Clear
+    </md-button>
+  </div>
+</md-dialog>
