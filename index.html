@@ -1,6 +1,6 @@
 <!doctype html>
 <html ng-app='adminPanel'>
-  <head>
+<head>
   <script src="bower_components/angular/angular.min.js"></script>
   <script src="bower_components/angular-material/angular-material.min.js"></script>
   <link rel="stylesheet" type="text/css" href="bower_components/angular-material/angular-material.min.css">
@@ -11,12 +11,15 @@
   <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
   <script src="js/appController.js"></script>
   <link rel="stylesheet" type="text/css" href="css/app.css">
+  <!-- Odometr includes -->
+  <link rel="stylesheet" href="http://github.hubspot.com/odometer/themes/odometer-theme-default.css" />
+  <script src="http://github.hubspot.com/odometer/odometer.js"></script>
 </head>
 <body ng-controller="adminCtrl">
   <md-toolbar md-scroll-shrink>
     <div class="md-toolbar-tools">
       <md-button ng-click="toggleLeft()">
-      <span class="glyphicon glyphicon-list" aria-hidden="true"></span>
+        <md-icon icon="bower_components/material-design-icons/navigation/drawable-hdpi/ic_menu_white_24dp.png"></md-icon>
       </md-button>
       <h2> {{title}} </h2>
     </div>
@@ -33,7 +36,8 @@
     <md-content class="md-padding" ng-controller="LeftCtrl">
        <md-list>
          <md-item ng-repeat="item in menuItems"> 
-           <md-item-content> 
+           <md-item-content>
+           <a href="{{url}}">
            <div layout="row">
              <div flex>
                <span class="glyphicon {{item.icon}}" aria-hidden="true"></span> 
@@ -42,6 +46,7 @@
                <span> {{item.name}} </span>
              </div>
            </div>
+           </a>
            <hr/>
            </md-item-content>
           </md-item>
@@ -49,33 +54,40 @@
     </md-content>
   </md-sidenav>
 
+  <!-- Grid for Dash board -->
   <md-content>
-    <md-card>Welcome to {{title}}</md-card>
-    <br/>
-   <md-card>
-   <table class="table table-hover">
-      <thead>
-        <tr>
-           <th> <md-checkbox> </md-checkbox></th> 
-           <th>Origin</th>
-          <th>Destination</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td> <md-checkbox> </md-checkbox></td>
-          <td> asdad </td>
-          <td>asd</td>
-        </tr>
-        <tr>
-          <td> <md-checkbox> </md-checkbox></td>
-          <td>sdaf</td>
-          <td>ads</td>
-        </tr>
-      </tbody>
-   </table>
-   </md-card>
+    <div layout="row" class="dashboard-grid">
+     <div flex>
+        <md-card class="grid-child">
+          <div class="grid-child-1">
+            <div id="box1" data-theme="default" class="odometer">00</div>
+          </div>
+          <div class="grid-text"> Text1 </div>
+        </md-card>
+      </div>
+      <div flex>
+        <md-card class="grid-child">
+          <div class="grid-child-2">
+            <div id="box2" data-theme="default" class="odometer">000000</div>
+          </div>
+          <div class="grid-text"> Text2 </div>
+        </md-card>
+      </div>
+      <div flex>
+        <md-card class="grid-child">
+          <div class="grid-child-3">
+            <div id="box3" data-theme="default" class="odometer">0000</div>
+          </div>
+          <div class="grid-text"> Text3 </div>
+        </md-card>
+      </div>
+    </div>
   </md-content>
-</body>
+
+  <!-- Floating button at bottom right corner -->
+  <md-button id="addPopUp" class="md-fab md-raised" ng-click="showDialog($event)" aria-label="Add anything.. :)">
+    <md-tooltip> Yo!! Add tooltip here </md-tooltip>
+    <md-icon icon="bower_components/material-design-icons/content/svg/production/ic_add_24px.svg" style="width: 24px; height: 24px;"></md-icon>
+  </md-button>
+
 </html>
-  
